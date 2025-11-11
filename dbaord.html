@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecast & Advice</title>
+  <link rel="stylesheet" href="2styles.css">
+</head>
+<body>
+  <div id="dashboard">
+    <h1>Weather Forecast & Advice for Dschang</h1>
+
+<div id="openweathermap-widget-11"></div>
+<script src='//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js'></script><script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 11,cityid: '2232444',appid: '373b3d04e45c1d3487f4b8ae7373713a',units: 'metric',containerid: 'openweathermap-widget-11',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>
+
+
+    <div id="weather-info">
+      <h2>Current Status</h2>
+      <p id="city"></p>
+      <p id="temperature"></p>
+      <p id="description"></p>
+    </div>
+    <div id="farming-advice">
+      <h2>Farming Advice</h2>
+      <p id="advice-text"></p>
+    </div>
+  </div>
+
+
+
+   <title>Maize Fertilizer Mix</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Maize Fertilizer Mix</h1>
+    <p>Recommended proportions of waste for maize fertilizer:</p>
+    <table>
+        <tr>
+            <th>Waste Type</th>
+            <th>Proportion (kg)</th>
+        </tr>
+        <tr>
+            <td>Tomato</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Fowl Dunk</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>Cow Dunk</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>Pig Dunk</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>Oranges</td>
+            <td>3</td>
+        </tr>
+    </table>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="2script.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+</head>
+<body>
+    <h1>Weather Forecast for Dschang</h1>
+    <div id="weather-info"></div>
+
+    <script>
+        // Function to fetch weather data from OpenWeatherMap API
+        function fetchWeatherData() {
+            const apiKey = '373b3d04e45c1d3487f4b8ae7373713a';
+            const cityName = 'Dschang';
+            const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    displayWeatherData(data);
+                })
+                .catch(error => {
+                    console.log('Error fetching weather data:', error);
+                });
+        }
+
+        // Function to display weather data
+        function displayWeatherData(data) {
+            const weatherInfoDiv = document.getElementById('weather-info');
+            weatherInfoDiv.innerHTML = `
+                <h2>${data.name}, ${data.sys.country}</h2>
+                <p>Temperature: ${data.main.temp}°C</p>
+                <p>Description: ${data.weather[0].description}</p>
+            `;
+        }
+
+        // Function to check if it will rain in the next few days
+        function checkRainForecast() {
+            const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY';
+            const cityName = 'Dschang';
+            const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const rainForecast = data.list.some(item => {
+                        return item.weather.some(weather => {
+                            return weather.main.toLowerCase().includes('rain');
+                        });
+                    });
+
+                    if (rainForecast) {
+                        console.log('It will rain in the next few days.');
+                    } else {
+                        console.log('It will not rain in the next few days.');
+                    }
+                })
+                .catch(error => {
+                    console.log('Error fetching weather forecast:', error);
+                });
+        }
+
+        // Fetch weather data when the page loads
+        fetchWeatherData();
+
+        // Check rain forecast when the page loads
+        checkRainForecast();
+    </script>
+</body>
+</html>

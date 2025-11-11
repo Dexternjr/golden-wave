@@ -1,0 +1,35 @@
+
+.dashboard {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .directive {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .directive h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    color: #333;
+  }
+  
+  .directive p {
+    margin-bottom: 0;
+    font-size: 1.4rem;
+    color: #666;
+  }
+  
