@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'inscription</title>
+</head>
+<body>
+    <form action="traitement.php" method="post">
+        <input type="text" name="nom" placeholder="Victor Zaas">
+        <input type="text" name="prenom" placeholder="Anderson">
+        <input type="text" name="num_tel" placeholder="ex: +237 621375930">
+        <!-- Autres champs du formulaire... -->
+        <button type="submit">Inscrire</button>
+    </form>
+
+    <?php include 'config.php'; ?>
+
+    <?php
+    // Exemple d'utilisation de la connexion à la base de données
+    $requete = "SELECT * FROM users";
+    $resultat = mysqli_query($connexion, $requete);
+
+    while ($ligne = mysqli_fetch_assoc($resultat)) {
+        echo 'Nom : ' . $ligne['nom'] . ', Prénom : ' . $ligne['prenom'] . '<br>';
+    }
+    ?>
+
+</body>
+</html>
